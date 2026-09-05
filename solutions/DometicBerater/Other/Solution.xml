@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Solution manifest for the DometicBerater unmanaged Dataverse solution. -->
+<ImportExportXml version="9.2.0.0" SolutionPackageVersion="9.2" languagecode="1031" generatedBy="CrmLive" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <SolutionManifest>
+    <UniqueName>DometicBerater</UniqueName>
+    <LocalizedNames>
+      <LocalizedName description="Dometic Bordelektrik-Berater" languagecode="1031" />
+    </LocalizedNames>
+    <Descriptions>
+      <Description description="KI-gestuetzter Bordelektrik-Berater (Laender, Marken, Regulierungen, Kategorien, Verbraucher)." languagecode="1031" />
+    </Descriptions>
+    <Version>1.0.0.0</Version>
+    <Managed>0</Managed>
+    <Publisher>
+      <UniqueName>pb</UniqueName>
+      <LocalizedNames>
+        <LocalizedName description="Powerbusters" languagecode="1031" />
+      </LocalizedNames>
+      <Descriptions>
+        <Description description="Publisher fuer Powerbusters-Fachloesungen." languagecode="1031" />
+      </Descriptions>
+      <EMailAddress xsi:nil="true"></EMailAddress>
+      <SupportingWebsiteUrl xsi:nil="true"></SupportingWebsiteUrl>
+      <CustomizationPrefix>pb</CustomizationPrefix>
+      <CustomizationOptionValuePrefix>10000</CustomizationOptionValuePrefix>
+      <Addresses>
+        <Address>
+          <AddressNumber>1</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true" />
+          <County xsi:nil="true" />
+          <Country xsi:nil="true" />
+          <Fax xsi:nil="true" />
+          <FreightTermsCode xsi:nil="true" />
+          <ImportSequenceNumber xsi:nil="true" />
+          <Latitude xsi:nil="true" />
+          <Line1 xsi:nil="true" />
+          <Line2 xsi:nil="true" />
+          <Line3 xsi:nil="true" />
+          <Longitude xsi:nil="true" />
+          <Name xsi:nil="true" />
+          <PostalCode xsi:nil="true" />
+          <PostOfficeBox xsi:nil="true" />
+          <PrimaryContactName xsi:nil="true" />
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true" />
+          <Telephone1 xsi:nil="true" />
+          <Telephone2 xsi:nil="true" />
+          <Telephone3 xsi:nil="true" />
+          <TimeZoneRuleVersionNumber>0</TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true" />
+          <UTCOffset>0</UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true" />
+        </Address>
+        <Address>
+          <AddressNumber>2</AddressNumber>
+          <AddressTypeCode>1</AddressTypeCode>
+          <City xsi:nil="true" />
+          <County xsi:nil="true" />
+          <Country xsi:nil="true" />
+          <Fax xsi:nil="true" />
+          <FreightTermsCode xsi:nil="true" />
+          <ImportSequenceNumber xsi:nil="true" />
+          <Latitude xsi:nil="true" />
+          <Line1 xsi:nil="true" />
+          <Line2 xsi:nil="true" />
+          <Line3 xsi:nil="true" />
+          <Longitude xsi:nil="true" />
+          <Name xsi:nil="true" />
+          <PostalCode xsi:nil="true" />
+          <PostOfficeBox xsi:nil="true" />
+          <PrimaryContactName xsi:nil="true" />
+          <ShippingMethodCode>1</ShippingMethodCode>
+          <StateOrProvince xsi:nil="true" />
+          <Telephone1 xsi:nil="true" />
+          <Telephone2 xsi:nil="true" />
+          <Telephone3 xsi:nil="true" />
+          <TimeZoneRuleVersionNumber>0</TimeZoneRuleVersionNumber>
+          <UPSZone xsi:nil="true" />
+          <UTCOffset>0</UTCOffset>
+          <UTCConversionTimeZoneCode xsi:nil="true" />
+        </Address>
+      </Addresses>
+    </Publisher>
+    <RootComponents>
+      <RootComponent type="1" schemaName="pb_dometiccountry" behavior="0" />
+      <RootComponent type="1" schemaName="pb_dometicbrand" behavior="0" />
+      <RootComponent type="1" schemaName="pb_dometicregulation" behavior="0" />
+      <RootComponent type="1" schemaName="pb_dometiccategory" behavior="0" />
+      <RootComponent type="1" schemaName="pb_dometicconsumer" behavior="0" />
+      <RootComponent type="9" schemaName="pb_lang" behavior="0" />
+      <RootComponent type="9" schemaName="pb_regiongroup" behavior="0" />
+    </RootComponents>
+    <MissingDependencies />
+  </SolutionManifest>
+</ImportExportXml>

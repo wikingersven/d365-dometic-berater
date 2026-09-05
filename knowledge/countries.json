@@ -1,0 +1,55 @@
+{
+  "countries": {
+    "DE": { "name": "Deutschland", "nameEN": "Germany", "lang": "de", "brand": "buettner", "regulations": "dach", "currency": "EUR" },
+    "AT": { "name": "Österreich", "nameEN": "Austria", "lang": "de", "brand": "buettner", "regulations": "dach", "currency": "EUR" },
+    "CH": { "name": "Schweiz", "nameEN": "Switzerland", "lang": "de", "brand": "buettner", "regulations": "dach", "currency": "CHF" },
+    "IT": { "name": "Italia", "nameEN": "Italy", "lang": "en", "brand": "nds", "regulations": "cei", "currency": "EUR" },
+    "FR": { "name": "France", "nameEN": "France", "lang": "fr", "brand": "dometic", "regulations": "fr", "currency": "EUR" },
+    "BE": { "name": "Belgique", "nameEN": "Belgium", "lang": "fr", "brand": "nds", "regulations": "arei", "currency": "EUR" },
+    "NL": { "name": "Nederland", "nameEN": "Netherlands", "lang": "en", "brand": "nds", "regulations": "nen", "currency": "EUR" },
+    "LU": { "name": "Luxembourg", "nameEN": "Luxembourg", "lang": "fr", "brand": "nds", "regulations": "arei", "currency": "EUR" },
+    "DK": { "name": "Danmark", "nameEN": "Denmark", "lang": "en", "brand": "dometic", "regulations": "nordic", "currency": "DKK" },
+    "SE": { "name": "Sverige", "nameEN": "Sweden", "lang": "en", "brand": "dometic", "regulations": "nordic", "currency": "SEK" },
+    "NO": { "name": "Norge", "nameEN": "Norway", "lang": "en", "brand": "dometic", "regulations": "nordic", "currency": "NOK" },
+    "FI": { "name": "Suomi", "nameEN": "Finland", "lang": "en", "brand": "dometic", "regulations": "nordic", "currency": "EUR" },
+    "ES": { "name": "España", "nameEN": "Spain", "lang": "en", "brand": "dometic", "regulations": "rebt", "currency": "EUR" },
+    "PT": { "name": "Portugal", "nameEN": "Portugal", "lang": "en", "brand": "dometic", "regulations": "rebt", "currency": "EUR" },
+    "GB": { "name": "United Kingdom", "nameEN": "United Kingdom", "lang": "en", "brand": "dometic", "regulations": "bs", "currency": "GBP" },
+    "IE": { "name": "Ireland", "nameEN": "Ireland", "lang": "en", "brand": "dometic", "regulations": "bs", "currency": "EUR" },
+    "PL": { "name": "Polska", "nameEN": "Poland", "lang": "en", "brand": "dometic", "regulations": "eu_default", "currency": "PLN" },
+    "CZ": { "name": "Česko", "nameEN": "Czech Republic", "lang": "en", "brand": "dometic", "regulations": "eu_default", "currency": "CZK" },
+    "SK": { "name": "Slovensko", "nameEN": "Slovakia", "lang": "en", "brand": "dometic", "regulations": "eu_default", "currency": "EUR" },
+    "HU": { "name": "Magyarország", "nameEN": "Hungary", "lang": "en", "brand": "dometic", "regulations": "eu_default", "currency": "HUF" },
+    "RO": { "name": "România", "nameEN": "Romania", "lang": "en", "brand": "dometic", "regulations": "eu_default", "currency": "RON" },
+    "BG": { "name": "България", "nameEN": "Bulgaria", "lang": "en", "brand": "dometic", "regulations": "eu_default", "currency": "BGN" },
+    "HR": { "name": "Hrvatska", "nameEN": "Croatia", "lang": "en", "brand": "dometic", "regulations": "eu_default", "currency": "EUR" },
+    "SI": { "name": "Slovenija", "nameEN": "Slovenia", "lang": "en", "brand": "dometic", "regulations": "eu_default", "currency": "EUR" },
+    "EE": { "name": "Eesti", "nameEN": "Estonia", "lang": "en", "brand": "dometic", "regulations": "eu_default", "currency": "EUR" },
+    "LV": { "name": "Latvija", "nameEN": "Latvia", "lang": "en", "brand": "dometic", "regulations": "eu_default", "currency": "EUR" },
+    "LT": { "name": "Lietuva", "nameEN": "Lithuania", "lang": "en", "brand": "dometic", "regulations": "eu_default", "currency": "EUR" },
+    "GR": { "name": "Ελλάδα", "nameEN": "Greece", "lang": "en", "brand": "dometic", "regulations": "eu_default", "currency": "EUR" },
+    "CY": { "name": "Κύπρος", "nameEN": "Cyprus", "lang": "en", "brand": "dometic", "regulations": "eu_default", "currency": "EUR" },
+    "MT": { "name": "Malta", "nameEN": "Malta", "lang": "en", "brand": "dometic", "regulations": "eu_default", "currency": "EUR" }
+  },
+  "brands": {
+    "buettner": { "name": "Büttner Elektronik / Dometic", "catalog": "brands/buettner.md" },
+    "nds": { "name": "NDS Energy / Dometic", "catalog": "brands/nds.md" },
+    "dometic": { "name": "Dometic", "catalog": "brands/dometic.md" }
+  },
+  "regulations": {
+    "dach": { "name": "DIN VDE / EN 1648", "file": "regulations/dach.md" },
+    "fr": { "name": "NF C15-100 / EN 1648", "file": "regulations/fr.md" },
+    "bs": { "name": "BS 7671 / EN 1648", "file": "regulations/bs.md" },
+    "cei": { "name": "CEI 64-8 / EN 1648", "file": "regulations/cei.md" },
+    "nordic": { "name": "NEK 400 / SS 436 / EN 1648", "file": "regulations/nordic.md" },
+    "arei": { "name": "AREI / EN 1648", "file": "regulations/arei.md" },
+    "nen": { "name": "NEN 1010 / EN 1648", "file": "regulations/nen.md" },
+    "rebt": { "name": "REBT / EN 1648", "file": "regulations/rebt.md" },
+    "eu_default": { "name": "HD 60364 / EN 1648 (EU default)", "file": "regulations/eu_default.md" }
+  },
+  "languages": {
+    "de": "Deutsch",
+    "en": "English",
+    "fr": "Français"
+  }
+}
