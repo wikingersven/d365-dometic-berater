@@ -57,8 +57,8 @@ interface RawCountry {
   pb_regiongroup: number;
   _pb_brand_value: string;
   _pb_regulation_value: string;
-  pb_brand?: RawBrand;
-  pb_regulation?: RawRegulation;
+  pb_Brand?: RawBrand;
+  pb_Regulation?: RawRegulation;
 }
 
 interface RawConsumer {
@@ -72,7 +72,7 @@ interface RawConsumer {
   pb_subcategory?: string;
   _pb_category_value: string;
   pb_sortorder: number;
-  pb_category?: { pb_categoryid: string };
+  pb_Category?: { pb_categoryid: string };
 }
 
 export class DataverseService implements IDataService {
@@ -103,11 +103,11 @@ export class DataverseService implements IDataService {
         this.query<RawCategory>("pb_dometiccategories", "?$orderby=pb_sortorder"),
         this.query<RawCountry>(
           "pb_dometiccountries",
-          "?$expand=pb_brand,pb_regulation&$orderby=pb_name",
+          "?$expand=pb_Brand,pb_Regulation&$orderby=pb_name",
         ),
         this.query<RawConsumer>(
           "pb_dometicconsumers",
-          "?$expand=pb_category($select=pb_categoryid)&$orderby=pb_sortorder",
+          "?$expand=pb_Category($select=pb_categoryid)&$orderby=pb_sortorder",
         ),
       ]);
 
@@ -126,8 +126,8 @@ export class DataverseService implements IDataService {
       pb_regiongroup: regionGroupFromValue(r.pb_regiongroup),
       _pb_brand_value: r._pb_brand_value,
       _pb_regulation_value: r._pb_regulation_value,
-      pb_brand: r.pb_brand,
-      pb_regulation: r.pb_regulation,
+      pb_brand: r.pb_Brand,
+      pb_regulation: r.pb_Regulation,
     }));
 
     const consumers: DometicConsumer[] = rawConsumers.map((r) => ({
@@ -141,7 +141,7 @@ export class DataverseService implements IDataService {
       pb_subcategory: r.pb_subcategory,
       _pb_category_value: r._pb_category_value,
       pb_sortorder: r.pb_sortorder,
-      categoryLetter: r.pb_category?.pb_categoryid ?? "",
+      categoryLetter: r.pb_Category?.pb_categoryid ?? "",
     }));
 
     return { countries, brands, regulations, categories, consumers };
