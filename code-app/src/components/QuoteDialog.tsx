@@ -155,7 +155,7 @@ export function QuoteDialog({ lang, agentText, onClose }: Props): ReactNode {
       }
       const res = await svc.createQuote({
         name: `Dometic Bordelektrik - ${customer.name}`,
-        customer: { id: customer.id, type: customer.type },
+        customer: { id: customer.id, type: customer.type, name: customer.name },
         lines: validLines,
       });
       setResult(res);

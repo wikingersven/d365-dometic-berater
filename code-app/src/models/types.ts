@@ -109,7 +109,7 @@ export interface NewCustomerInput {
 /** Eingabe zum Erstellen eines Angebots. */
 export interface CreateQuoteInput {
   name: string;
-  customer: { id: string; type: "account" | "contact" };
+  customer: { id: string; type: "account" | "contact"; name: string };
   lines: QuoteLineItem[];
 }
 

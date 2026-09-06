@@ -16,10 +16,7 @@ import { istDemoModus } from "./serviceFactory";
 const API_BASE = (import.meta.env.VITE_DATAVERSE_URL as string | undefined) ?? "";
 const TOKEN = import.meta.env.VITE_DATAVERSE_TOKEN as string | undefined;
 
-/** Preisliste "Dometic Bordelektrik UVP 2026". */
-const PRICELIST_ID = "0a83611c-c4a9-f111-aaac-70a8a538c36c";
-/** Primäre Mengeneinheit. */
-const UOM_ID = "34137b31-100f-f011-998a-7c1e52510281";
+// Custom-Tabellen pb_dometicquote/pb_dometicquoteline statt Standard-Quotes (Dual-Write-Bypass)
 
 /** Service-Interface für die Angebots-Erstellung. */
 export interface IQuoteService {
@@ -122,13 +119,15 @@ export class DataverseQuoteService implements IQuoteService {
       "products",
       "?$filter=contains(productnumber,'DOM-')&$select=productid,productnumber,name,price,description&$orderby=productnumber",
     );
-    return raw.map((p) => ({
+    const result = raw.map((p) => ({
       productid: p.productid,
       productnumber: p.productnumber,
       name: p.name,
       price: p.price ?? 0,
       description: p.description,
     }));
+    this._products = result;
+    return result;
   }
 
   async searchCustomers(term: string): Promise<CustomerSearchResult[]> {
@@ -195,39 +194,50 @@ export class DataverseQuoteService implements IQuoteService {
   }
 
   async createQuote(input: CreateQuoteInput): Promise<QuoteResult> {
+    // Use custom pb_dometicquote table to bypass Dual-Write
+    const total = input.lines.reduce(
+      (s, l) => s + l.quantity * l.pricePerUnit,
+      0,
+    );
     const quoteBody: Record<string, unknown> = {
-      name: input.name,
-      "pricelevelid@odata.bind": `/pricelevels(${PRICELIST_ID})`,
+      pb_name: input.name,
+      pb_customername: input.customer.name ?? "",
+      pb_customertype: input.customer.type,
+      pb_customerid: input.customer.id,
+      pb_totalamount: total,
+      pb_linecount: input.lines.length,
     };
-    if (input.customer.type === "account") {
-      quoteBody["customerid_account@odata.bind"] =
-        `/accounts(${input.customer.id})`;
-    } else {
-      quoteBody["customerid_contact@odata.bind"] =
-        `/contacts(${input.customer.id})`;
-    }
-    const quote = await postEntity<{ quoteid: string }>("quotes", quoteBody);
+    const quote = await postEntity<{ pb_dometicquoteid: string }>(
+      "pb_dometicquotes",
+      quoteBody,
+    );
 
+    // Create line items
     await Promise.all(
-      input.lines.map((line) =>
-        postEntity("quotedetails", {
-          "quoteid@odata.bind": `/quotes(${quote.quoteid})`,
-          "productid@odata.bind": `/products(${line.productId})`,
-          "uomid@odata.bind": `/uoms(${UOM_ID})`,
-          quantity: line.quantity,
-          priceperunit: line.pricePerUnit,
-          ispriceoverridden: true,
-        }),
-      ),
+      input.lines.map((line) => {
+        const prod = this._products?.find(
+          (p) => p.productid === line.productId,
+        );
+        return postEntity("pb_dometicquotelines", {
+          pb_name: prod?.name ?? line.productId,
+          pb_productnumber: prod?.productnumber ?? "",
+          pb_quantity: line.quantity,
+          pb_priceperunit: line.pricePerUnit,
+          pb_linetotal: line.quantity * line.pricePerUnit,
+          "pb_Quote@odata.bind": `/pb_dometicquotes(${quote.pb_dometicquoteid})`,
+        });
+      }),
     );
 
     return {
-      quoteId: quote.quoteid,
+      quoteId: quote.pb_dometicquoteid,
       name: input.name,
-      url: `${API_BASE}/main.aspx?pagetype=entityrecord&etn=quote&id=${quote.quoteid}`,
+      url: `${API_BASE}/main.aspx?pagetype=entityrecord&etn=pb_dometicquote&id=${quote.pb_dometicquoteid}`,
       demo: false,
     };
   }
+
+  private _products: Product[] | null = null;
 }
 
 /** Demo-Produkte für den Mock-Modus (Auszug der DOM-*-Palette). */
