@@ -19,6 +19,31 @@ export interface Translation {
   btnSubmit: string;
   btnSend: string;
   btnPDF: string;
+  btnQuote: string;
+  quoteTitle: string;
+  quoteCustomer: string;
+  quoteExisting: string;
+  quoteNew: string;
+  quoteCompany: string;
+  quotePerson: string;
+  quoteName: string;
+  quoteEmail: string;
+  quotePhone: string;
+  quoteSearch: string;
+  quoteProduct: string;
+  quoteQty: string;
+  quotePrice: string;
+  quoteTotal: string;
+  quoteAddLine: string;
+  quoteGrandTotal: string;
+  quoteSubmit: string;
+  quoteCancel: string;
+  quoteSuccess: string;
+  quoteOpenInD365: string;
+  quoteError: string;
+  quoteDemo: string;
+  quoteNoCustomer: string;
+  quoteNoLines: string;
   inputPlaceholder: string;
   chatEmptyTitle: string;
   chatEmptyText: string;
@@ -68,6 +93,31 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
     btnSubmit: "Alle Antworten absenden",
     btnSend: "Senden",
     btnPDF: "PDF herunterladen",
+    btnQuote: "Angebot erstellen",
+    quoteTitle: "Angebot erstellen",
+    quoteCustomer: "Kunde",
+    quoteExisting: "Bestehender Kunde",
+    quoteNew: "Neuer Kunde",
+    quoteCompany: "Firma",
+    quotePerson: "Person",
+    quoteName: "Name",
+    quoteEmail: "E-Mail",
+    quotePhone: "Telefon",
+    quoteSearch: "Kunde suchen...",
+    quoteProduct: "Produkt",
+    quoteQty: "Menge",
+    quotePrice: "Preis/Stk",
+    quoteTotal: "Summe",
+    quoteAddLine: "Position hinzufügen",
+    quoteGrandTotal: "Gesamtsumme",
+    quoteSubmit: "Angebot erstellen",
+    quoteCancel: "Abbrechen",
+    quoteSuccess: "Angebot erstellt!",
+    quoteOpenInD365: "In D365 öffnen",
+    quoteError: "Fehler beim Erstellen",
+    quoteDemo: "Demo-Modus — Angebot wird nicht erstellt",
+    quoteNoCustomer: "Bitte einen Kunden auswählen oder anlegen.",
+    quoteNoLines: "Bitte mindestens eine Position mit Produkt hinzufügen.",
     inputPlaceholder: "Deine Antwort...",
     chatEmptyTitle: "Wähle links deine Verbraucher",
     chatEmptyText:
@@ -122,6 +172,31 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
     btnSubmit: "Submit all answers",
     btnSend: "Send",
     btnPDF: "Download PDF",
+    btnQuote: "Create quote",
+    quoteTitle: "Create Quote",
+    quoteCustomer: "Customer",
+    quoteExisting: "Existing customer",
+    quoteNew: "New customer",
+    quoteCompany: "Company",
+    quotePerson: "Person",
+    quoteName: "Name",
+    quoteEmail: "Email",
+    quotePhone: "Phone",
+    quoteSearch: "Search customer...",
+    quoteProduct: "Product",
+    quoteQty: "Qty",
+    quotePrice: "Price/Unit",
+    quoteTotal: "Total",
+    quoteAddLine: "Add line",
+    quoteGrandTotal: "Grand total",
+    quoteSubmit: "Create quote",
+    quoteCancel: "Cancel",
+    quoteSuccess: "Quote created!",
+    quoteOpenInD365: "Open in D365",
+    quoteError: "Error creating quote",
+    quoteDemo: "Demo mode — quote will not be created",
+    quoteNoCustomer: "Please select or create a customer.",
+    quoteNoLines: "Please add at least one line with a product.",
     inputPlaceholder: "Your answer...",
     chatEmptyTitle: "Select your consumers on the left",
     chatEmptyText:
@@ -176,6 +251,31 @@ export const TRANSLATIONS: Record<Lang, Translation> = {
     btnSubmit: "Envoyer toutes les réponses",
     btnSend: "Envoyer",
     btnPDF: "Télécharger le PDF",
+    btnQuote: "Créer un devis",
+    quoteTitle: "Créer un devis",
+    quoteCustomer: "Client",
+    quoteExisting: "Client existant",
+    quoteNew: "Nouveau client",
+    quoteCompany: "Entreprise",
+    quotePerson: "Personne",
+    quoteName: "Nom",
+    quoteEmail: "E-mail",
+    quotePhone: "Téléphone",
+    quoteSearch: "Rechercher un client...",
+    quoteProduct: "Produit",
+    quoteQty: "Qté",
+    quotePrice: "Prix/Unité",
+    quoteTotal: "Total",
+    quoteAddLine: "Ajouter une ligne",
+    quoteGrandTotal: "Total général",
+    quoteSubmit: "Créer le devis",
+    quoteCancel: "Annuler",
+    quoteSuccess: "Devis créé !",
+    quoteOpenInD365: "Ouvrir dans D365",
+    quoteError: "Erreur lors de la création",
+    quoteDemo: "Mode démo — le devis ne sera pas créé",
+    quoteNoCustomer: "Veuillez sélectionner ou créer un client.",
+    quoteNoLines: "Veuillez ajouter au moins une ligne avec un produit.",
     inputPlaceholder: "Votre réponse...",
     chatEmptyTitle: "Sélectionnez vos consommateurs à gauche",
     chatEmptyText:

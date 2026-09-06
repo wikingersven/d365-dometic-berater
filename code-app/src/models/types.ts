@@ -72,6 +72,55 @@ export interface DometicConsumer {
   categoryLetter: string; // Convenience: "A".."E" (aus Kategorie-Expand)
 }
 
+/** D365-Produkt (Standard-Entität products, gefiltert auf DOM-*). */
+export interface Product {
+  productid: string;
+  productnumber: string;
+  name: string;
+  price: number;
+  description?: string;
+}
+
+/** Eine Position (Zeile) im Angebot-Dialog (Client-seitig). */
+export interface QuoteLineItem {
+  key: string; // stabile Client-ID (nur UI)
+  productId: string;
+  quantity: number;
+  pricePerUnit: number;
+}
+
+/** Treffer der Kunden-Suche (Account oder Contact vereinheitlicht). */
+export interface CustomerSearchResult {
+  id: string;
+  type: "account" | "contact";
+  name: string;
+  email?: string;
+  phone?: string;
+}
+
+/** Eingabedaten zur Neuanlage eines Kunden. */
+export interface NewCustomerInput {
+  kind: "company" | "person";
+  name: string; // Firmenname bzw. vollständiger Name
+  email?: string;
+  phone?: string;
+}
+
+/** Eingabe zum Erstellen eines Angebots. */
+export interface CreateQuoteInput {
+  name: string;
+  customer: { id: string; type: "account" | "contact" };
+  lines: QuoteLineItem[];
+}
+
+/** Ergebnis der Angebots-Erstellung. */
+export interface QuoteResult {
+  quoteId: string;
+  name: string;
+  url?: string; // Deep-Link ins D365 (leer im Demo-Modus)
+  demo: boolean;
+}
+
 /** Gebündelte Konfigurationsdaten für die Beratung. */
 export interface BeraterData {
   countries: DometicCountry[];
